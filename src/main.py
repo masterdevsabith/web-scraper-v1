@@ -13,9 +13,9 @@ clean_html = re.sub(r"<script.*?>.*?</script>", "",
                     soupped, flags=re.DOTALL | re.IGNORECASE)
 
 
-print(clean_html)
 try:
-    f = open("index.html", "x")
+    f = open("db/index.html", "x")
 except FileExistsError:
-    with open("index.html", "w") as f:
+    with open("db/index.html", "w") as f:
         f.write(clean_html)
+    print("save to db/index.html")
